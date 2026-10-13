@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maya Restaurant — Traditional Business</title>
+<meta name="description" content="Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years. We need a beautiful one-page website with online menu, reservation system, and a sim…" />
+<meta name="theme-color" content="#b84a2a"/>
+<meta name="author" content="Daily Lead Engine" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #1c1917; --ink: #ffffff; --primary: #b84a2a; --secondary: #1c1917;
+  --accent: #78350f; --grey: #a8a29e; --card: #27231f; --card-op: #ffffff28;
+  --mark: ; --grad: linear-gradient(135deg, #fdf2f8, ('#1c1917', '#0f1722')); --display: 'Inter', sans-serif; --font: 'Playfair Display', serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body { font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.6; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+.wrap { max-width:1200px; margin:0 auto; padding:0 28px; }
+.scroll-reveal { opacity:0; transform:translateY(26px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
+.scroll-reveal.in-view { opacity:1; transform:none; }
+.scroll-reveal.d1 { transition-delay:.05s; } .scroll-reveal.d2 { transition-delay:.12s; } .scroll-reveal.d3 { transition-delay:.18s; } .scroll-reveal.d4 { transition-delay:.25s; } .scroll-reveal.d5 { transition-delay:.32s; } .scroll-reveal.d6 { transition-delay:.40s; }
+.grid { display:grid; gap:18px; }
+.card { background:var(--card); border-radius:14px; padding:22px; box-shadow:0 12px 35px -10px rgba(0,0,0,.5); border:1px solid var(--card-op); transition:transform .3s ease, box-shadow .3s ease; position:relative; overflow:hidden; }
+.card:hover { transform:translateY(-5px) rotateX(2deg) rotateY(2deg); box-shadow:0 24px 50px -12px var(--primary); }
+.card .num { font-family:var(--display); font-size:26px; font-weight:700; color:var(--primary); margin-bottom:10px; line-height:1.1; }
+.card h3 { font-family:var(--display); font-size:20px; font-weight:600; color:var(--ink); margin-bottom:8px; }
+.card p { font-size:14px; color:#b9b2ab; }
+.stat { font-family:var(--display); font-size:46px; font-weight:700; color:var(--primary); text-align:center; line-height:1.1; }
+.hero { position:relative; min-height:92vh; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; overflow:hidden; perspective:1600px; }
+.hero::before, .hero::after { content:""; position:absolute; inset:-0%; background:radial-gradient(1300px 800px at 75% 25%, linear-gradient(135deg, #fdf2f8, ('#1c1917', '#0f1722'))90, transparent 60%); } .hero::after { inset:auto 0 0 0; background:radial-gradient(900px 700px at 15% 85%, linear-gradient(135deg, #fdf2f8, ('#1c1917', '#0f1722'))75, transparent 55%); }
+.hero-inner { position:relative; z-index:2; max-width:980px; padding:44px 28px; }
+.hero-mesh { position:absolute; inset:-50% 0 0 -50%; width:200%; height:200%; pointer-events:none; overflow:hidden; }
+.hero-mesh .blob { position:absolute; border-radius:50%; filter:blur(80px); opacity:.16; animation:float3d 28s ease-in-out infinite alternate; }
+.hero-mesh .blob.b1 { width:460px; height:460px; background:var(--primary); top:-100px; left:-100px; animation-delay:0s; }
+.hero-mesh .blob.b2 { width:420px; height:420px; background:var(--accent); bottom:-90px; right:-90px; animation-delay:-9s; }
+.hero-mesh .blob.b3 { width:380px; height:380px; background:var(--secondary); top:-80px; right:-80px; animation-delay:-18s; }
+@keyframes float3d {
+  0% { transform:translate(0,0) translateZ(0) scale(1); }
+  33% { transform:translate(50px,-40px) translateZ(0) scale(1.07); }
+  66% { transform:translate(-28px,44px) translateZ(0) scale(.93); }
+  100% { transform:translate(38px,28px) translateZ(0) scale(1.04); }
+}
+.hero h1 { font-family:var(--display); font-size:clamp(32px, 5.2vw, 62px); line-height:1.08; letter-spacing:-.01em; margin-bottom:16px; color:var(--ink); }
+.hero h1 .gold { color:var(--primary); text-shadow:0 0 24px rgba(184,134,11,.45); }
+.hero p.lede { font-size:18px; color:#c9c2b8; max-width:660px; margin:0 auto 24px; font-weight:300; }
+.hero .actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.hero .lead-tag { display:inline-block; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); padding:6px 14px; border-radius:30px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#fff; }
+.stat { font-family:var(--display); font-size:44px; font-weight:700; color:var(--primary); text-align:center; }
+.nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:18px 0; transition:background .3s ease; }
+.nav.scrolled { background:rgba(15,16,21,.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.06); }
+.nav .inner { display:flex; align-items:center; justify-content:space-between; }
+.logo { display:flex; align-items:center; gap:12px; font-family:var(--display); font-weight:700; font-size:24px; color:var(--primary); letter-spacing:.01em; }
+.nav-links { display:flex; gap:20px; list-style:none; }
+.nav-links a { color:#c9c2b8; font-size:14px; font-weight:500; position:relative; padding:6px 0; transition:color .2s; }
+.nav-links a::after { content:""; position:absolute; left:0; bottom:0; right:0; height:2px; background:var(--primary); transform:scaleX(0); transform-origin:center; transition:transform .25s ease; }
+.nav-links a:hover { color:#fff; }
+.nav-links a:hover::after { transform:scaleX(1); }
+.section { padding:90px 0; } .section-label { font-family:var(--display); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--primary); font-weight:600; margin-bottom:8px; }
+.section-title { font-family:var(--display); font-size:32px; color:var(--ink); margin-bottom:12px; }
+.lead-text { text-align:center; color:#b9b2ab; max-width:620px; margin:0 auto 10px; font-size:16px; }
+.form-input { width:100%; padding:13px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.07); color:#fff; font:inherit; outline:none; transition:border-color .2s, box-shadow .2s; }
+.form-input:focus { border-color:var(--primary); box-shadow:0 0 0 3px var(--primary); } .form-txt { padding:13px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.07); color:#fff; font:inherit; outline:none; resize:none; }
+.contact-cta { padding:50px 0; }
+.copy { font-size:14px; color:#b9b2ab; line-height:1.7; }
+.pill { display:inline-block; padding:6px 14px; border-radius:40px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); font-size:12px; color:#e8e2da; }
+.footer { padding:40px 0 30px; border-top:1px solid rgba(255,255,255,.07); font-size:13px; color:#9c948b; }
+@media (max-width:768px) { .form-grid { grid-template-columns:1fr; } .nav-links { gap:12px; } .nav-links a { font-size:13px; } }
+</style>
+</head>
+<body>
+
+<!-- nav -->
+<header class="nav" id="nav">
+  <div class="inner wrap">
+    <a class="logo" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="#b84a2a" stroke-width="1.5" opacity=".35"/><circle cx="20" cy="38" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="36" cy="30" r="1.1" fill="#b84a2a"/><circle cx="38" cy="29" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="20" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="38" cy="28" r="1.1" fill="#b84a2a"/><circle cx="37" cy="30" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="20" cy="37" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="36" cy="30" r="1.1" fill="#b84a2a"/><circle cx="38" cy="29" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="20" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="38" cy="28" r="1.1" fill="#b84a2a"/><circle cx="37" cy="30" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="20" cy="20" r="3" fill="#b84a2a"/></svg><span>#b84a2a</span>Maya Restaurant</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero" style="">
+  <div class="hero-mesh">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="row" style="display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center;">
+      <span class="lead-tag">Restaurant · San Francisco, CA</span>
+      <h1 class="scroll-reveal">Maya Restaurant <span class="gold">#b84a2a</span></h1>
+      <p class="lede scroll-reveal">Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years. We need a beautiful one-page website with online menu, reservation system, and a sim…</p>
+      <div class="actions scroll-reveal">
+        <a class="btn" href="#contact">Get a free quote</a>
+        <a class="btn ghost" href="#work">Explore work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- stats -->
+<section class="section" style="background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);">
+  <div class="inner wrap">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;text-align:center;">
+      <div class="stat scroll-reveal">90</div>
+      <div class="stat scroll-reveal">75</div>
+      <div class="stat scroll-reveal">5</div>
+      <div class="stat scroll-reveal">2</div>
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="section" id="services" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);">
+  <div class="wrap">
+    <div class="section-label scroll-reveal">What we do</div>
+    <h2 class="section-title scroll-reveal">Services that move your project forward</h2>
+    <div class="grid" style="margin-top:28px;"><div class="card scroll-reveal"><span class="num">01</span><h3>Brand &amp; positioning</h3><p>A clear identity and messaging that carries your legacy forward.</p></div>
+<div class="card scroll-reveal"><span class="num">02</span><h3>Web design</h3><p>Refined, timeless layouts with elegant typography.</p></div>
+<div class="card scroll-reveal"><span class="num">03</span><h3>Virtual tours</h3><p>Immersive property walkthroughs that sell the lifestyle.</p></div>
+<div class="card scroll-reveal"><span class="num">04</span><h3>Digital presence</h3><p>A polished online home that reflects your story.</p></div></div>
+  </div>
+</section>
+
+<!-- work -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-label scroll-reveal">Selected work</div>
+    <h2 class="section-title scroll-reveal">Recent work we built</h2>
+    <div class="grid" style="margin-top:28px;"><div class="card scroll-reveal d1"><h3>Heritage rebrand</h3><p>Brand identity and site built around the family legacy and historic building.</p></div>
+<div class="card scroll-reveal d2"><h3>Virtual tours</h3><p>Styled property tours and media-rich listing pages.</p></div>
+<div class="card scroll-reveal d3"><h3>Local portals</h3><p>Region-focused hub for inbound agents and buyers.</p></div></div>
+  </div>
+</section>
+
+<!-- about / pricing -->
+<section class="section" id="pricing" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);">
+  <div class="wrap">
+    <div class="row" style="display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:start;">
+      <div class="scroll-reveal">
+        <div class="section-label">About</div>
+        <h2 class="section-title">Built around your story</h2>
+        <p class="lead-text">Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years. We need a beautiful one-page website with online menu, reservation system, and a sim…</p>
+        <p class="copy">This site was built specifically for <strong>Maya Restaurant</strong> to establish a strong, credible online presence and convert interest into enquiries.</p>
+      </div>
+      <div class="scroll-reveal d1" style="display:flex;flex-direction:column;gap:14px;">
+        <div class="card scroll-reveal""><span class="num">01</span><h3>Essentials</h3><p class="price" style="color:var(--primary);font-size:24px;font-weight:700;">$699</p><ul><li>Mobile responsive</li><li>Online menu / booking</li><li>Local SEO</li></ul><a class="btn" href="#contact">One-page site, menu/booking, basic SEO.</a></div>
+<div class="card scroll-reveal" featured"><span class="num">02</span><h3>Heritage</h3><p class="price" style="color:var(--primary);font-size:24px;font-weight:700;">$2,499</p><ul><li>Virtual tours</li><li>Rebranding</li><li>Media portfolio</li></ul><a class="btn" href="#contact">Multi-page rebrand, virtual tours, custom.</a></div>
+<div class="card scroll-reveal""><span class="num">03</span><h3>Premium</h3><p class="price" style="color:var(--primary);font-size:24px;font-weight:700;">$4,499</p><ul><li>Unlimited pages</li><li>Custom integrations</li><li>Ongoing support</li></ul><a class="btn" href="#contact">Full build, media suite, ongoing support.</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="section contact-cta" id="contact">
+  <div class="wrap">
+    <div style="max-width:760px; margin:0 auto;">
+      <div class="section-label scroll-reveal">Let's talk</div>
+      <h2 class="section-title scroll-reveal">Ready to start? Let's build something your business will love.</h2>
+      <p class="lead-text scroll-reveal">Interested in a website for <strong>Maya Restaurant</strong>? Drop us a message and we'll get back within 24 hours.</p>
+      <form class="scroll-reveal" id="contact-form">
+        <div class="form-grid">
+          <input name="name" class="form-input" placeholder="Your name" required />
+          <input name="email" class="form-input" type="email" placeholder="Your email" required />
+        </div>
+        <textarea name="message" class="form-txt" placeholder="Tell us about your project…" required></textarea>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>&copy; 2026 Maya Restaurant. Built with the Daily Lead Engine — a lead-generation and website-product.</p>
+</footer>
+
+<script>
+
+(function(){
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      fetch('/', {method: 'POST', body: new FormData(form)}).then(() => {
+        btn.textContent = 'Sent!';
+        form.reset();
+        setTimeout(() => { btn.textContent = 'Send message'; }, 3000);
+      });
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
