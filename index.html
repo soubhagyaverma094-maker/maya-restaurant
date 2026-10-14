@@ -3,209 +3,1502 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Maya Restaurant — Traditional Business</title>
-<meta name="description" content="Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years. We need a beautiful one-page website with online menu, reservation system, and a sim…" />
-<meta name="theme-color" content="#b84a2a"/>
+<title>Maya Restaurant — Authentic Indian Cuisine in San Francisco</title>
+<meta name="description" content="Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years in San Francisco. Online menu, reservations, and private dining." />
+<meta name="theme-color" content="#b84a2a" />
 <meta name="author" content="Daily Lead Engine" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Lenis smooth scroll CSS -->
+<link rel="stylesheet" href="assets/lenis.css">
+
+<!-- Custom Styles -->
 <style>
 :root {
-  --bg: #1c1917; --ink: #ffffff; --primary: #b84a2a; --secondary: #1c1917;
-  --accent: #78350f; --grey: #a8a29e; --card: #27231f; --card-op: #ffffff28;
-  --mark: ; --grad: linear-gradient(135deg, #fdf2f8, ('#1c1917', '#0f1722')); --display: 'Inter', sans-serif; --font: 'Playfair Display', serif;
+  --bg: #0f0d0b;
+  --bg-warm: #1a1512;
+  --ink: #f5efe8;
+  --ink-muted: #c4b8a9;
+  --primary: #c45a2e;
+  --primary-light: #e07b4a;
+  --primary-dark: #8b3a1a;
+  --accent: #d4a853;
+  --accent-light: #e8c97a;
+  --card: #1e1a16;
+  --card-border: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --gradient-warm: linear-gradient(135deg, #c45a2e 0%, #d4a853 50%, #e8c97a 100%);
+  --gradient-dark: linear-gradient(180deg, #0f0d0b 0%, #1a1512 100%);
+  --gradient-glow: radial-gradient(ellipse at 50% 0%, rgba(196,90,46,0.15) 0%, transparent 70%);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
 }
-*{box-sizing:border-box; margin:0; padding:0;}
-body { font-family:var(--font); background:var(--bg); color:var(--ink); line-height:1.6; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
-.wrap { max-width:1200px; margin:0 auto; padding:0 28px; }
-.scroll-reveal { opacity:0; transform:translateY(26px); transition:opacity .75s cubic-bezier(.22,1,.36,1), transform .75s cubic-bezier(.22,1,.36,1); }
-.scroll-reveal.in-view { opacity:1; transform:none; }
-.scroll-reveal.d1 { transition-delay:.05s; } .scroll-reveal.d2 { transition-delay:.12s; } .scroll-reveal.d3 { transition-delay:.18s; } .scroll-reveal.d4 { transition-delay:.25s; } .scroll-reveal.d5 { transition-delay:.32s; } .scroll-reveal.d6 { transition-delay:.40s; }
-.grid { display:grid; gap:18px; }
-.card { background:var(--card); border-radius:14px; padding:22px; box-shadow:0 12px 35px -10px rgba(0,0,0,.5); border:1px solid var(--card-op); transition:transform .3s ease, box-shadow .3s ease; position:relative; overflow:hidden; }
-.card:hover { transform:translateY(-5px) rotateX(2deg) rotateY(2deg); box-shadow:0 24px 50px -12px var(--primary); }
-.card .num { font-family:var(--display); font-size:26px; font-weight:700; color:var(--primary); margin-bottom:10px; line-height:1.1; }
-.card h3 { font-family:var(--display); font-size:20px; font-weight:600; color:var(--ink); margin-bottom:8px; }
-.card p { font-size:14px; color:#b9b2ab; }
-.stat { font-family:var(--display); font-size:46px; font-weight:700; color:var(--primary); text-align:center; line-height:1.1; }
-.hero { position:relative; min-height:92vh; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff; overflow:hidden; perspective:1600px; }
-.hero::before, .hero::after { content:""; position:absolute; inset:-0%; background:radial-gradient(1300px 800px at 75% 25%, linear-gradient(135deg, #fdf2f8, ('#1c1917', '#0f1722'))90, transparent 60%); } .hero::after { inset:auto 0 0 0; background:radial-gradient(900px 700px at 15% 85%, linear-gradient(135deg, #fdf2f8, ('#1c1917', '#0f1722'))75, transparent 55%); }
-.hero-inner { position:relative; z-index:2; max-width:980px; padding:44px 28px; }
-.hero-mesh { position:absolute; inset:-50% 0 0 -50%; width:200%; height:200%; pointer-events:none; overflow:hidden; }
-.hero-mesh .blob { position:absolute; border-radius:50%; filter:blur(80px); opacity:.16; animation:float3d 28s ease-in-out infinite alternate; }
-.hero-mesh .blob.b1 { width:460px; height:460px; background:var(--primary); top:-100px; left:-100px; animation-delay:0s; }
-.hero-mesh .blob.b2 { width:420px; height:420px; background:var(--accent); bottom:-90px; right:-90px; animation-delay:-9s; }
-.hero-mesh .blob.b3 { width:380px; height:380px; background:var(--secondary); top:-80px; right:-80px; animation-delay:-18s; }
-@keyframes float3d {
-  0% { transform:translate(0,0) translateZ(0) scale(1); }
-  33% { transform:translate(50px,-40px) translateZ(0) scale(1.07); }
-  66% { transform:translate(-28px,44px) translateZ(0) scale(.93); }
-  100% { transform:translate(38px,28px) translateZ(0) scale(1.04); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: auto;
+  overflow-x: hidden;
 }
-.hero h1 { font-family:var(--display); font-size:clamp(32px, 5.2vw, 62px); line-height:1.08; letter-spacing:-.01em; margin-bottom:16px; color:var(--ink); }
-.hero h1 .gold { color:var(--primary); text-shadow:0 0 24px rgba(184,134,11,.45); }
-.hero p.lede { font-size:18px; color:#c9c2b8; max-width:660px; margin:0 auto 24px; font-weight:300; }
-.hero .actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-.hero .lead-tag { display:inline-block; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); padding:6px 14px; border-radius:30px; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#fff; }
-.stat { font-family:var(--display); font-size:44px; font-weight:700; color:var(--primary); text-align:center; }
-.nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:18px 0; transition:background .3s ease; }
-.nav.scrolled { background:rgba(15,16,21,.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.06); }
-.nav .inner { display:flex; align-items:center; justify-content:space-between; }
-.logo { display:flex; align-items:center; gap:12px; font-family:var(--display); font-weight:700; font-size:24px; color:var(--primary); letter-spacing:.01em; }
-.nav-links { display:flex; gap:20px; list-style:none; }
-.nav-links a { color:#c9c2b8; font-size:14px; font-weight:500; position:relative; padding:6px 0; transition:color .2s; }
-.nav-links a::after { content:""; position:absolute; left:0; bottom:0; right:0; height:2px; background:var(--primary); transform:scaleX(0); transform-origin:center; transition:transform .25s ease; }
-.nav-links a:hover { color:#fff; }
-.nav-links a:hover::after { transform:scaleX(1); }
-.section { padding:90px 0; } .section-label { font-family:var(--display); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--primary); font-weight:600; margin-bottom:8px; }
-.section-title { font-family:var(--display); font-size:32px; color:var(--ink); margin-bottom:12px; }
-.lead-text { text-align:center; color:#b9b2ab; max-width:620px; margin:0 auto 10px; font-size:16px; }
-.form-input { width:100%; padding:13px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.07); color:#fff; font:inherit; outline:none; transition:border-color .2s, box-shadow .2s; }
-.form-input:focus { border-color:var(--primary); box-shadow:0 0 0 3px var(--primary); } .form-txt { padding:13px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.07); color:#fff; font:inherit; outline:none; resize:none; }
-.contact-cta { padding:50px 0; }
-.copy { font-size:14px; color:#b9b2ab; line-height:1.7; }
-.pill { display:inline-block; padding:6px 14px; border-radius:40px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); font-size:12px; color:#e8e2da; }
-.footer { padding:40px 0 30px; border-top:1px solid rgba(255,255,255,.07); font-size:13px; color:#9c948b; }
-@media (max-width:768px) { .form-grid { grid-template-columns:1fr; } .nav-links { gap:12px; } .nav-links a { font-size:13px; } }
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { text-decoration: none; color: inherit; }
+img, video { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, textarea, select { font-family: inherit; }
+
+::selection { background: var(--primary); color: #fff; }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary-dark); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+.wrap-wide { max-width: 1400px; margin: 0 auto; padding: 0 28px; }
+
+.font-display { font-family: var(--font-display); }
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gradient-text {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+.gradient-border > * {
+  border-radius: 15px;
+  background: var(--card);
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.retro-grid {
+  background-image:
+    linear-gradient(rgba(196,90,46,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196,90,46,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--gradient-warm);
+  color: #fff;
+  box-shadow: 0 4px 20px -4px rgba(196,90,46,0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -4px rgba(196,90,46,0.5);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.25);
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+.btn-shimmer:hover::before {
+  transform: translateX(100%);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(196,90,46,0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.card:hover::before { opacity: 1; }
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196,90,46,0.2);
+  box-shadow: 0 20px 40px -12px rgba(0,0,0,0.4);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.4s var(--ease-out-expo);
+}
+.nav.scrolled {
+  padding: 12px 0;
+  background: rgba(15,13,11,0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--gradient-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--ink-muted);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  position: relative;
+}
+.nav-links a:hover {
+  color: var(--ink);
+  background: rgba(255,255,255,0.05);
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+  height: 2px;
+  background: var(--gradient-warm);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s var(--ease-out-expo);
+  border-radius: 1px;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,13,11,0.7) 0%, rgba(15,13,11,0.4) 50%, var(--bg) 100%);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 120px 28px 80px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: rgba(196,90,46,0.12);
+  border: 1px solid rgba(196,90,46,0.2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary-light);
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+.hero h1 .line {
+  display: block;
+  overflow: hidden;
+}
+.hero h1 .line span {
+  display: inline-block;
+}
+.hero p.lede {
+  font-size: 18px;
+  color: var(--ink-muted);
+  max-width: 600px;
+  margin: 0 auto 36px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.hero .actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.scroll-indicator span {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--primary), transparent);
+  animation: scroll-line 2s ease-in-out infinite;
+}
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--primary);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.section-subtitle {
+  font-size: 17px;
+  color: var(--ink-muted);
+  max-width: 580px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.stat-card {
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s;
+}
+.stat-card:hover {
+  border-color: rgba(196,90,46,0.2);
+  transform: translateY(-2px);
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.menu-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  transition: all 0.4s var(--ease-out-expo);
+}
+.menu-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(196,90,46,0.2);
+  box-shadow: 0 24px 48px -12px rgba(0,0,0,0.5);
+}
+.menu-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.menu-card:hover .menu-card-img {
+  transform: scale(1.05);
+}
+.menu-card-body {
+  padding: 24px;
+}
+.menu-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.menu-card-body p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.menu-tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(196,90,46,0.12);
+  color: var(--primary-light);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 12px;
+}
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.gallery-item:nth-child(4) { grid-column: span 2; }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.testimonial-card {
+  padding: 28px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s;
+}
+.testimonial-card:hover {
+  border-color: rgba(196,90,46,0.2);
+  transform: translateY(-2px);
+}
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: 16px;
+}
+.testimonial-text {
+  font-size: 15px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+.testimonial-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink);
+}
+.testimonial-role {
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.reservation-card {
+  border-radius: 20px;
+  padding: 40px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+}
+.reservation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-warm);
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group.full { grid-column: span 2; }
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  letter-spacing: 0.03em;
+}
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: var(--ink);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s;
+}
+.form-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(196,90,46,0.15);
+  background: rgba(255,255,255,0.06);
+}
+.form-input::placeholder { color: rgba(255,255,255,0.25); }
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  color: var(--ink);
+  font-size: 15px;
+  outline: none;
+  resize: none;
+  min-height: 120px;
+  transition: all 0.3s;
+}
+.form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(196,90,46,0.15);
+  background: rgba(255,255,255,0.06);
+}
+.form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+.footer {
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 300px;
+}
+.footer h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-links a {
+  font-size: 14px;
+  color: var(--ink-muted);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--primary); }
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.counter {
+  display: inline-block;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 60px;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track span {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--ink-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+.parallax-bg {
+  position: absolute;
+  inset: -20% 0;
+  z-index: 0;
+}
+.parallax-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+}
+.parallax-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 180px); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero h1 { font-size: clamp(36px, 8vw, 48px); }
+  .section { padding: 60px 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .menu-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .form-group.full { grid-column: span 1; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 200px); }
+  .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+  .gallery-item:nth-child(4) { grid-column: span 1; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
 
-<!-- nav -->
+<!-- Navigation -->
 <header class="nav" id="nav">
   <div class="inner wrap">
-    <a class="logo" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="#b84a2a" stroke-width="1.5" opacity=".35"/><circle cx="20" cy="38" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="36" cy="30" r="1.1" fill="#b84a2a"/><circle cx="38" cy="29" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="20" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="38" cy="28" r="1.1" fill="#b84a2a"/><circle cx="37" cy="30" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="20" cy="37" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="36" cy="30" r="1.1" fill="#b84a2a"/><circle cx="38" cy="29" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="20" r="1.1" fill="#b84a2a"/><circle cx="40" cy="21" r="1.1" fill="#b84a2a"/><circle cx="40" cy="23" r="1.1" fill="#b84a2a"/><circle cx="39" cy="25" r="1.1" fill="#b84a2a"/><circle cx="39" cy="27" r="1.1" fill="#b84a2a"/><circle cx="38" cy="28" r="1.1" fill="#b84a2a"/><circle cx="37" cy="30" r="1.1" fill="#b84a2a"/><circle cx="35" cy="32" r="1.1" fill="#b84a2a"/><circle cx="34" cy="33" r="1.1" fill="#b84a2a"/><circle cx="32" cy="34" r="1.1" fill="#b84a2a"/><circle cx="30" cy="35" r="1.1" fill="#b84a2a"/><circle cx="28" cy="36" r="1.1" fill="#b84a2a"/><circle cx="26" cy="37" r="1.1" fill="#b84a2a"/><circle cx="24" cy="37" r="1.1" fill="#b84a2a"/><circle cx="22" cy="37" r="1.1" fill="#b84a2a"/><circle cx="20" cy="20" r="3" fill="#b84a2a"/></svg><span>#b84a2a</span>Maya Restaurant</a>
+    <a class="logo" href="#">
+      <div class="logo-icon">M</div>
+      <span>Maya</span>
+    </a>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#reserve">Reserve</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </header>
 
-<!-- hero -->
-<section class="hero" style="">
-  <div class="hero-mesh">
-    <div class="blob b1"></div>
-    <div class="blob b2"></div>
-    <div class="blob b3"></div>
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80" alt="Restaurant ambiance" />
   </div>
-  <div class="hero-inner">
-    <div class="row" style="display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:center;">
-      <span class="lead-tag">Restaurant · San Francisco, CA</span>
-      <h1 class="scroll-reveal">Maya Restaurant <span class="gold">#b84a2a</span></h1>
-      <p class="lede scroll-reveal">Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years. We need a beautiful one-page website with online menu, reservation system, and a sim…</p>
-      <div class="actions scroll-reveal">
-        <a class="btn" href="#contact">Get a free quote</a>
-        <a class="btn ghost" href="#work">Explore work</a>
+  <div class="hero-overlay"></div>
+  <div class="particles" id="particles"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Authentic Indian Cuisine · San Francisco
+    </div>
+    <h1 id="hero-title">
+      <span class="line"><span>Flavors of India,</span></span>
+      <span class="line"><span class="gradient-text">Served with Love</span></span>
+    </h1>
+    <p class="lede" id="hero-lede">
+      Family-owned for 15 years, Maya Restaurant brings the authentic taste of India to San Francisco. Every dish tells a story of tradition, spice, and warmth.
+    </p>
+    <div class="actions" id="hero-actions">
+      <a class="btn btn-primary btn-shimmer" href="#reserve">Reserve a Table</a>
+      <a class="btn btn-ghost" href="#menu">View Menu</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-track" id="marquee-track">
+    <span>North Indian</span>
+    <span>South Indian</span>
+    <span>Street Food</span>
+    <span>Biryani</span>
+    <span>Tandoor</span>
+    <span>Desserts</span>
+    <span>North Indian</span>
+    <span>South Indian</span>
+    <span>Street Food</span>
+    <span>Biryani</span>
+    <span>Tandoor</span>
+    <span>Desserts</span>
+  </div>
+</div>
+
+<!-- Stats -->
+<section class="section" id="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-card" data-count="15" data-suffix="+">
+        <div class="stat-number"><span class="counter">0</span>+</div>
+        <div class="stat-label">Years Serving</div>
+      </div>
+      <div class="stat-card" data-count="200" data-suffix="+">
+        <div class="stat-number"><span class="counter">0</span>+</div>
+        <div class="stat-label">Dishes</div>
+      </div>
+      <div class="stat-card" data-count="50" data-suffix="K+">
+        <div class="stat-number"><span class="counter">0</span>K+</div>
+        <div class="stat-label">Happy Guests</div>
+      </div>
+      <div class="stat-card" data-count="4" data-suffix=".9">
+        <div class="stat-number"><span class="counter">0</span>.9</div>
+        <div class="stat-label">Avg Rating</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- stats -->
-<section class="section" style="background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);">
-  <div class="inner wrap">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;text-align:center;">
-      <div class="stat scroll-reveal">90</div>
-      <div class="stat scroll-reveal">75</div>
-      <div class="stat scroll-reveal">5</div>
-      <div class="stat scroll-reveal">2</div>
-    </div>
-  </div>
-</section>
-
-<!-- services -->
-<section class="section" id="services" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);">
+<!-- Menu -->
+<section class="section" id="menu" style="background: var(--bg-warm);">
   <div class="wrap">
-    <div class="section-label scroll-reveal">What we do</div>
-    <h2 class="section-title scroll-reveal">Services that move your project forward</h2>
-    <div class="grid" style="margin-top:28px;"><div class="card scroll-reveal"><span class="num">01</span><h3>Brand &amp; positioning</h3><p>A clear identity and messaging that carries your legacy forward.</p></div>
-<div class="card scroll-reveal"><span class="num">02</span><h3>Web design</h3><p>Refined, timeless layouts with elegant typography.</p></div>
-<div class="card scroll-reveal"><span class="num">03</span><h3>Virtual tours</h3><p>Immersive property walkthroughs that sell the lifestyle.</p></div>
-<div class="card scroll-reveal"><span class="num">04</span><h3>Digital presence</h3><p>A polished online home that reflects your story.</p></div></div>
-  </div>
-</section>
-
-<!-- work -->
-<section class="section" id="work">
-  <div class="wrap">
-    <div class="section-label scroll-reveal">Selected work</div>
-    <h2 class="section-title scroll-reveal">Recent work we built</h2>
-    <div class="grid" style="margin-top:28px;"><div class="card scroll-reveal d1"><h3>Heritage rebrand</h3><p>Brand identity and site built around the family legacy and historic building.</p></div>
-<div class="card scroll-reveal d2"><h3>Virtual tours</h3><p>Styled property tours and media-rich listing pages.</p></div>
-<div class="card scroll-reveal d3"><h3>Local portals</h3><p>Region-focused hub for inbound agents and buyers.</p></div></div>
-  </div>
-</section>
-
-<!-- about / pricing -->
-<section class="section" id="pricing" style="background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);">
-  <div class="wrap">
-    <div class="row" style="display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:start;">
-      <div class="scroll-reveal">
-        <div class="section-label">About</div>
-        <h2 class="section-title">Built around your story</h2>
-        <p class="lead-text">Family-owned Maya Restaurant serving authentic Indian cuisine for 15 years. We need a beautiful one-page website with online menu, reservation system, and a sim…</p>
-        <p class="copy">This site was built specifically for <strong>Maya Restaurant</strong> to establish a strong, credible online presence and convert interest into enquiries.</p>
-      </div>
-      <div class="scroll-reveal d1" style="display:flex;flex-direction:column;gap:14px;">
-        <div class="card scroll-reveal""><span class="num">01</span><h3>Essentials</h3><p class="price" style="color:var(--primary);font-size:24px;font-weight:700;">$699</p><ul><li>Mobile responsive</li><li>Online menu / booking</li><li>Local SEO</li></ul><a class="btn" href="#contact">One-page site, menu/booking, basic SEO.</a></div>
-<div class="card scroll-reveal" featured"><span class="num">02</span><h3>Heritage</h3><p class="price" style="color:var(--primary);font-size:24px;font-weight:700;">$2,499</p><ul><li>Virtual tours</li><li>Rebranding</li><li>Media portfolio</li></ul><a class="btn" href="#contact">Multi-page rebrand, virtual tours, custom.</a></div>
-<div class="card scroll-reveal""><span class="num">03</span><h3>Premium</h3><p class="price" style="color:var(--primary);font-size:24px;font-weight:700;">$4,499</p><ul><li>Unlimited pages</li><li>Custom integrations</li><li>Ongoing support</li></ul><a class="btn" href="#contact">Full build, media suite, ongoing support.</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- contact -->
-<section class="section contact-cta" id="contact">
-  <div class="wrap">
-    <div style="max-width:760px; margin:0 auto;">
-      <div class="section-label scroll-reveal">Let's talk</div>
-      <h2 class="section-title scroll-reveal">Ready to start? Let's build something your business will love.</h2>
-      <p class="lead-text scroll-reveal">Interested in a website for <strong>Maya Restaurant</strong>? Drop us a message and we'll get back within 24 hours.</p>
-      <form class="scroll-reveal" id="contact-form">
-        <div class="form-grid">
-          <input name="name" class="form-input" placeholder="Your name" required />
-          <input name="email" class="form-input" type="email" placeholder="Your email" required />
+    <div class="section-label">Our Menu</div>
+    <h2 class="section-title">Signature Dishes</h2>
+    <p class="section-subtitle" style="margin-bottom: 40px;">
+      From tandoor-fired breads to slow-simmered curries, every dish is made fresh with recipes passed down through generations.
+    </p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="Butter Chicken" />
+        <div class="menu-card-body">
+          <h3>Butter Chicken</h3>
+          <p>Tender chicken simmered in a rich, creamy tomato sauce with aromatic spices.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$18</span>
+            <span class="menu-tag">Bestseller</span>
+          </div>
         </div>
-        <textarea name="message" class="form-txt" placeholder="Tell us about your project…" required></textarea>
-        <button class="btn" type="submit">Send message</button>
+      </div>
+      <div class="menu-card">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Biryani" />
+        <div class="menu-card-body">
+          <h3>Hyderabadi Biryani</h3>
+          <p>Fragrant basmati rice layered with spiced meat, saffron, and fried onions.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$22</span>
+            <span class="menu-tag">Chef's Pick</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600&q=80" alt="Paneer Tikka" />
+        <div class="menu-card-body">
+          <h3>Paneer Tikka</h3>
+          <p>Char-grilled cottage cheese marinated in yogurt and tandoori spices.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$16</span>
+            <span class="menu-tag">Vegetarian</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=600&q=80" alt="Dosa" />
+        <div class="menu-card-body">
+          <h3>Masala Dosa</h3>
+          <p>Crispy fermented crepe filled with spiced potato, served with chutneys.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$14</span>
+            <span class="menu-tag">South Indian</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&q=80" alt="Samosa" />
+        <div class="menu-card-body">
+          <h3>Punjabi Samosa</h3>
+          <p>Golden pastry filled with spiced peas and potatoes, served with tamarind chutney.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$8</span>
+            <span class="menu-tag">Street Food</span>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img class="menu-card-img" src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80" alt="Gulab Jamun" />
+        <div class="menu-card-body">
+          <h3>Gulab Jamun</h3>
+          <p>Soft milk dumplings soaked in rose-flavored sugar syrup, served warm.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">$7</span>
+            <span class="menu-tag">Dessert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">A Feast for the Eyes</h2>
+    <p class="section-subtitle" style="margin-bottom: 40px;">
+      Step inside Maya Restaurant — where warm lighting, handcrafted decor, and the aroma of spices create an unforgettable dining experience.
+    </p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant interior" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Table setting" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80" alt="Food platter" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Fresh ingredients" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Chef's special" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Parallax Quote -->
+<section class="section parallax-section" style="padding: 120px 0;">
+  <div class="parallax-bg">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80" alt="" />
+  </div>
+  <div class="parallax-content wrap" style="text-align: center;">
+    <div class="section-label" style="justify-content: center;">Our Story</div>
+    <h2 class="section-title" style="max-width: 700px; margin: 0 auto 16px;">
+      "Cooking is not just about food — it's about bringing people together."
+    </h2>
+    <p class="section-subtitle" style="margin: 0 auto;">
+      — The Maya Family, since 2011
+    </p>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="testimonials" style="background: var(--bg-warm);">
+  <div class="wrap">
+    <div class="section-label">Reviews</div>
+    <h2 class="section-title">What Our Guests Say</h2>
+    <p class="section-subtitle" style="margin-bottom: 40px;">
+      Rated 4.9 stars across 2,000+ reviews. Here's what makes Maya a San Francisco favorite.
+    </p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "The butter chicken here is the best I've had outside of India. You can taste the authenticity in every bite. The ambiance is warm and inviting — perfect for date nights."
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P</div>
+          <div>
+            <div class="testimonial-name">Priya Sharma</div>
+            <div class="testimonial-role">Regular since 2018</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "We hosted our anniversary dinner here and the staff went above and beyond. The biryani was incredible and the gulab jamun was the perfect ending. Highly recommend!"
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">James Chen</div>
+            <div class="testimonial-role">First-time visitor</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          "As a vegetarian, I'm always looking for Indian restaurants with great options. Maya's paneer tikka and masala dosa are outstanding. The lunch buffet is an amazing value."
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Anita Desai</div>
+            <div class="testimonial-role">Food blogger</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reservation -->
+<section class="section" id="reserve">
+  <div class="wrap">
+    <div class="section-label">Reservations</div>
+    <h2 class="section-title">Book Your Table</h2>
+    <p class="section-subtitle" style="margin-bottom: 40px;">
+      Join us for an unforgettable dining experience. Reserve your table in seconds.
+    </p>
+    <div class="reservation-card">
+      <form id="reservation-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Name</label>
+            <input class="form-input" type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date</label>
+            <input class="form-input" type="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Time</label>
+            <select class="form-input" name="time" required>
+              <option value="">Select time</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="17:30">5:30 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="18:30">6:30 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="19:30">7:30 PM</option>
+              <option value="20:00">8:00 PM</option>
+              <option value="20:30">8:30 PM</option>
+              <option value="21:00">9:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Guests</label>
+            <select class="form-input" name="guests" required>
+              <option value="">Number of guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+              <option value="6">6 Guests</option>
+              <option value="7">7+ Guests (private dining)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input class="form-input" type="tel" name="phone" placeholder="(415) 555-0199" />
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Special Requests</label>
+            <textarea class="form-textarea" name="requests" placeholder="Any dietary restrictions, celebrations, or special arrangements..."></textarea>
+          </div>
+        </div>
+        <div style="margin-top: 24px;">
+          <button class="btn btn-primary btn-shimmer" type="submit">Confirm Reservation</button>
+        </div>
       </form>
     </div>
   </div>
 </section>
 
+<!-- Contact -->
+<section class="section" id="contact" style="background: var(--bg-warm);">
+  <div class="wrap">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Visit Us</h2>
+    <p class="section-subtitle" style="margin-bottom: 40px;">
+      We'd love to hear from you. Stop by, give us a call, or send us a message.
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <div class="card">
+        <h3 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 12px;">📍 Location</h3>
+        <p style="color: var(--ink-muted); font-size: 15px; line-height: 1.7;">
+          123 Valencia Street<br />
+          San Francisco, CA 94110
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 12px;">📞 Phone</h3>
+        <p style="color: var(--ink-muted); font-size: 15px; line-height: 1.7;">
+          (415) 555-0199<br />
+          Mon–Sun: 11 AM – 10 PM
+        </p>
+      </div>
+      <div class="card">
+        <h3 style="font-family: var(--font-display); font-size: 20px; margin-bottom: 12px;">✉️ Email</h3>
+        <p style="color: var(--ink-muted); font-size: 15px; line-height: 1.7;">
+          owner@mayarestaurant.com<br />
+          We reply within 24 hours
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="footer">
-  <p>&copy; 2026 Maya Restaurant. Built with the Daily Lead Engine — a lead-generation and website-product.</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#">
+          <div class="logo-icon">M</div>
+          <span>Maya</span>
+        </a>
+        <p>Family-owned Indian restaurant serving authentic flavors in San Francisco since 2011. Every dish is a celebration of tradition.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#reserve">Reservations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul class="footer-links">
+          <li><a href="#">Mon–Fri: 11 AM – 10 PM</a></li>
+          <li><a href="#">Sat–Sun: 10 AM – 11 PM</a></li>
+          <li><a href="#">Happy Hour: 3–6 PM</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Yelp</a></li>
+          <li><a href="#">Google</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Maya Restaurant. All rights reserved.</span>
+      <span>Built with the Daily Lead Engine</span>
+    </div>
+  </div>
 </footer>
 
-<script>
+<!-- GSAP + ScrollTrigger -->
+<script src="assets/gsap.min.js"></script>
+<script src="assets/ScrollTrigger.min.js"></script>
 
-(function(){
+<!-- Lenis Smooth Scroll -->
+<script>
+// Lenis smooth scroll - inlined from vendor source (TypeScript compiled to JS)
+// Based on https://github.com/darkroomengineering/lenis
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).Lenis=e()}(this,(function(){"use strict";
+class Lenis{constructor({wrapper=t,content:e=document.documentElement,eventsTarget:i=wrapper,smoothWheel:s=!0,syncTouch:n=!1,syncTouchLerp:o=.075,touchInertiaExponent:r=1.7,duration:a,easing:h=(t=>Math.min(1,1.001-Math.pow(2,-10*t))),lerp:l=.1,infinite:c=!1,orientation:p="vertical",gestureOrientation:d="vertical",prevent:u=!1}={}){this.options={wrapper:e,content:i,eventsTarget:s,smoothWheel:n,syncTouch:o,syncTouchLerp:r,touchInertiaExponent:a,duration:h,easing:l,lerp:c,infinite:p,orientation:d,gestureOrientation:u,prevent:i},this.wrapper=e,this.content=i,this.eventsTarget=s,this.options=e,this.emitter={events:{},on(t,e){return this.events[t]||(this.events[t]=[]),this.events[t].push(e),this},off(t,e){return this.events[t]&&(this.events[t]=this.events[t].filter((t=>t!==e))),this},emit(t,e){this.events[t]&&this.events[t].forEach((t=>t(e)))}},this.isScrolling=!1,this.isStopped=!1,this.isLocked=!1,this.preventNextNativeScrollEvent=!1,this.velocity=0,this.direction=0,this.isTouching=void 0,this.isIos=/iPad|iPhone|iPod/.test(navigator.platform),this.time=0,this.userData={},this.lastVelocity=0,this.animate=t=>{this.isStopped||this.isLocked||(this.time+=16,this.emitter.emit("scroll",{scroll:this.targetScroll,velocity:this.velocity,direction:this.direction,time:this.time,delta:this.targetScroll-this.currentScroll,userData:this.userData}),this.currentScroll=this.targetScroll,this.velocity=0,this.direction=0)},this.internalStart=()=>{this.isStopped=!1,this.animate()},this.internalStop=()=>{this.isStopped=!0},this.onNativeScroll=t=>{if(!this.preventNextNativeScrollEvent){if(this.isStopped||this.isLocked)return;this.preventNextNativeScrollEvent=!0;const{scrollX:e,scrollY:i}=window;this.targetScroll="vertical"===this.options.orientation?i:e,this.currentScroll=this.targetScroll,this.velocity=0,this.direction=0,this.emitter.emit("scroll",{scroll:this.targetScroll,velocity:0,direction:0,time:this.time,delta:0,userData:this.userData}),requestAnimationFrame((()=>{this.preventNextNativeScrollEvent=!1}))}},this.onWheel=t=>{if(this.isStopped||this.isLocked)return;const{deltaX:e,deltaY:i}=t,s="vertical"===this.options.orientation?i:e,n=Math.max(-1,Math.min(1,s));this.targetScroll+=n*100,this.velocity=n,this.direction=n>0?1:-1,this.isScrolling=!0,this.emitter.emit("scroll",{scroll:this.targetScroll,velocity:this.velocity,direction:this.direction,time:this.time,delta:this.targetScroll-this.currentScroll,userData:this.userData})},this.eventsTarget.addEventListener("wheel",this.onWheel,{passive:!1}),this.wrapper.addEventListener("scroll",this.onNativeScroll,{passive:!0}),this.targetScroll=this.currentScroll="vertical"===this.options.orientation?window.scrollY:window.scrollX,this.animate()}on(t,e){return this.emitter.on(t,e)}off(t,e){return this.emitter.off(t,e)}scrollTo(t,{offset:e=0,immediate:i=!1,lock:s=!1,programmatic:n=!0,lerp:o=n?this.options.lerp:void 0,duration:r=n?this.options.duration:void 0,easing:a=this.options.easing}={}){const h="string"==typeof t?document.querySelector(t):t,l="number"==typeof t?t:h?.getBoundingClientRect().top+window.scrollY;let c=l+e;i?this.currentScroll=c:this.targetScroll=c,this.isScrolling=!0,s&&(this.isLocked=!0),this.emitter.emit("scroll",{scroll:this.targetScroll,velocity:0,direction:0,time:this.time,delta:this.targetScroll-this.currentScroll,userData:this.userData})}start(){this.isStopped&&(this.isStopped=!1,this.animate())}stop(){this.isStopped||(this.isStopped=!0)}destroy(){this.stop(),this.eventsTarget.removeEventListener("wheel",this.onWheel),this.wrapper.removeEventListener("scroll",this.onNativeScroll)}}return Lenis}));
+</script>
+
+<!-- Main Animation Script -->
+<script>
+(function() {
+  'use strict';
+
+  // ── Lenis Smooth Scroll ──────────────────────────────────────────
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    touchMultiplier: 2,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Sync Lenis with GSAP ScrollTrigger
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+
+  // ── GSAP Registration ───────────────────────────────────────────
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── Hero Animations ─────────────────────────────────────────────
+  const heroTl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+  heroTl
+    .from('.hero-badge', { y: 30, opacity: 0, duration: 0.8, delay: 0.2 })
+    .from('.hero h1 .line span', { y: 120, opacity: 0, duration: 1, stagger: 0.15, ease: 'power4.out' }, '-=0.4')
+    .from('.hero p.lede', { y: 30, opacity: 0, duration: 0.8 }, '-=0.6')
+    .from('.hero .actions', { y: 30, opacity: 0, duration: 0.8 }, '-=0.5')
+    .from('.scroll-indicator', { opacity: 0, duration: 0.5 }, '-=0.3');
+
+  // ── Floating Particles ──────────────────────────────────────────
+  const particlesContainer = document.getElementById('particles');
+  if (particlesContainer) {
+    for (let i = 0; i < 20; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.width = (Math.random() * 4 + 2) + 'px';
+      particle.style.height = particle.style.width;
+      particle.style.background = Math.random() > 0.5 ? 'var(--primary)' : 'var(--accent)';
+      particlesContainer.appendChild(particle);
+
+      gsap.to(particle, {
+        y: -100 - Math.random() * 200,
+        x: (Math.random() - 0.5) * 100,
+        opacity: 0.6,
+        duration: 3 + Math.random() * 4,
+        repeat: -1,
+        delay: Math.random() * 3,
+        ease: 'none',
+        onRepeat: () => {
+          gsap.set(particle, {
+            x: (Math.random() - 0.5) * 100,
+            y: 0,
+            opacity: 0,
+          });
+        }
+      });
+    }
+  }
+
+  // ── Navigation Scroll Effect ────────────────────────────────────
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
-  const form = document.getElementById('contact-form');
+  lenis.on('scroll', ({ scroll }) => {
+    nav.classList.toggle('scrolled', scroll > 60);
+  });
+
+  // ── Stats Counter Animation ─────────────────────────────────────
+  document.querySelectorAll('.stat-card').forEach((card) => {
+    const counterEl = card.querySelector('.counter');
+    const target = parseInt(card.dataset.count, 10);
+    const suffix = card.dataset.suffix || '';
+
+    ScrollTrigger.create({
+      trigger: card,
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        gsap.to({ val: 0 }, {
+          val: target,
+          duration: 2,
+          ease: 'power2.out',
+          onUpdate: function() {
+            counterEl.textContent = Math.round(this.targets()[0].val);
+          }
+        });
+      }
+    });
+  });
+
+  // ── Section Reveal Animations ───────────────────────────────────
+  document.querySelectorAll('.section').forEach((section) => {
+    const label = section.querySelector('.section-label');
+    const title = section.querySelector('.section-title');
+    const subtitle = section.querySelector('.section-subtitle');
+
+    if (label) {
+      gsap.from(label, {
+        y: 20, opacity: 0, duration: 0.6, ease: 'power3.out',
+        scrollTrigger: { trigger: label, start: 'top 90%' }
+      });
+    }
+    if (title) {
+      gsap.from(title, {
+        y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: title, start: 'top 85%' }
+      });
+    }
+    if (subtitle) {
+      gsap.from(subtitle, {
+        y: 30, opacity: 0, duration: 0.7, ease: 'power3.out',
+        scrollTrigger: { trigger: subtitle, start: 'top 85%' }
+      });
+    }
+  });
+
+  // ── Menu Cards Stagger ──────────────────────────────────────────
+  gsap.from('.menu-card', {
+    y: 60, opacity: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+    scrollTrigger: { trigger: '.menu-grid', start: 'top 80%' }
+  });
+
+  // ── Gallery Parallax ────────────────────────────────────────────
+  gsap.from('.gallery-item', {
+    scale: 0.8, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+    scrollTrigger: { trigger: '.gallery-grid', start: 'top 80%' }
+  });
+
+  // ── Testimonials Stagger ────────────────────────────────────────
+  gsap.from('.testimonial-card', {
+    y: 50, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+    scrollTrigger: { trigger: '.testimonials-grid', start: 'top 80%' }
+  });
+
+  // ── Reservation Card ────────────────────────────────────────────
+  gsap.from('.reservation-card', {
+    y: 60, opacity: 0, duration: 1, ease: 'power3.out',
+    scrollTrigger: { trigger: '.reservation-card', start: 'top 80%' }
+  });
+
+  // ── Contact Cards ───────────────────────────────────────────────
+  gsap.from('#contact .card', {
+    y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out',
+    scrollTrigger: { trigger: '#contact .grid', start: 'top 80%' }
+  });
+
+  // ── Parallax Background ─────────────────────────────────────────
+  gsap.to('.parallax-bg', {
+    yPercent: 30,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '.parallax-section',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  // ── Smooth Scroll for Anchor Links ──────────────────────────────
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        lenis.scrollTo(target, { offset: -80, duration: 1.2 });
+      }
+    });
+  });
+
+  // ── Form Submission ─────────────────────────────────────────────
+  const form = document.getElementById('reservation-form');
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Sending…';
-      fetch('/', {method: 'POST', body: new FormData(form)}).then(() => {
-        btn.textContent = 'Sent!';
+      btn.textContent = 'Confirming...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.textContent = '✓ Table Reserved!';
+        btn.style.background = 'linear-gradient(135deg, #2d8a4e, #4ade80)';
         form.reset();
-        setTimeout(() => { btn.textContent = 'Send message'; }, 3000);
-      });
+
+        setTimeout(() => {
+          btn.textContent = 'Confirm Reservation';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 3000);
+      }, 1500);
     });
   }
-})();
 
+  // ── Card Mouse Tracking (Magic UI spotlight effect) ─────────────
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', x + 'px');
+      card.style.setProperty('--mouse-y', y + 'px');
+    });
+  });
+
+  // ── Hero Parallax on Mouse Move ─────────────────────────────────
+  const heroContent = document.querySelector('.hero-content');
+  document.querySelector('.hero').addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+    gsap.to(heroContent, { x: x, y: y, duration: 0.5, ease: 'power2.out' });
+  });
+
+})();
 </script>
+
 </body>
 </html>
